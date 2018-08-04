@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+     background-image: url("12345.jpg");
+	font-size:70%
+	}
+input{
+  background-color:#00FFFF
+}
+button{
+background-color:#00FFFF;
+}
+a{
+color: #002633;
+font-size:40px
+}
+b{
+color:#0086b3;
+font-size:20px
+}
+c{
+color: #000066;
+font-size:100px
+}
+</style>
+<head>
+<title>html</title>
+
+<script>
+var a1,a2,a3,a4,b1,b2,b3,b4,sum1,sum2,sum3,sum4,sumf,count,bdika,sum,num1,num2;
+function random()
+{
+document.getElementById("matrix11").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix12").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix13").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix14").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix21").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix22").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix23").value=Math.floor(Math.random()*10)+1;
+document.getElementById("matrix24").value=Math.floor(Math.random()*10)+1;
+}
+function kafal()
+{
+
+ if( document.getElementById("myRadio1").checked)
+{
+
+a1=document.getElementById("matrix11").value;
+a2=document.getElementById("matrix12").value;
+a3=document.getElementById("matrix13").value;
+a4=document.getElementById("matrix14").value;
+b1=document.getElementById("matrix21").value;
+b2=document.getElementById("matrix22").value;
+b3=document.getElementById("matrix23").value;
+b4=document.getElementById("matrix24").value;
+bdika=document.getElementById("sum").value;
+
+sum1=parseFloat(a1) * parseFloat(b1)+parseFloat(a2) * parseFloat(b3)
+sum2=parseFloat(a1) * parseFloat(b2)+parseFloat(a2) * parseFloat(b4)
+sum3=parseFloat(a3) * parseFloat(b1)+parseFloat(a4) * parseFloat(b3)
+sum4=parseFloat(a3) * parseFloat(b2)+parseFloat(a4) * parseFloat(b4)
+sumf=parseFloat(sum1)*parseFloat(sum4)-parseFloat(sum2)*parseFloat(sum3)
+document.getElementById("result1").innerHTML=sum1;
+document.getElementById("result2").innerHTML=sum2;
+document.getElementById("result3").innerHTML=sum3;
+document.getElementById("result4").innerHTML=sum4;
+document.getElementById("resultf").innerHTML=sumf;
+count=sumf 
+correct=0
+if(bdika==count)
+{
+document.getElementById('myImage').src="correct.png";
+}
+else
+{
+document.getElementById('myImage').src="x.png";
+}
+document.getElementById("correct").innerHTML=correct;
+document.getElementById("x").innerHTML=count-win;
+}
+ else
+ if(document.getElementById("myRadio2").checked)
+ {
+a1=document.getElementById("matrix11").value;
+a2=document.getElementById("matrix12").value;
+a3=document.getElementById("matrix13").value;
+a4=document.getElementById("matrix14").value;
+b1=document.getElementById("matrix21").value;
+b2=document.getElementById("matrix22").value;
+b3=document.getElementById("matrix23").value;
+b4=document.getElementById("matrix24").value;
+bdika=document.getElementById("sum").value;
+
+sum1=parseFloat(a1) + parseFloat(b1)
+sum2=parseFloat(a2) + parseFloat(b2)
+sum3=parseFloat(a3) + parseFloat(b3)
+sum4=parseFloat(a4) + parseFloat(b4)
+sumf=parseFloat(sum1)*parseFloat(sum4)-parseFloat(sum2)*parseFloat(sum3)
+document.getElementById("result1").innerHTML=sum1;
+document.getElementById("result2").innerHTML=sum2;
+document.getElementById("result3").innerHTML=sum3;
+document.getElementById("result4").innerHTML=sum4;
+document.getElementById("resultf").innerHTML=sumf;
+count=sumf
+correct=0
+if(bdika==count)
+{
+document.getElementById('myImage').src="correct.png";
+}
+else
+{
+document.getElementById('myImage').src="x.png";
+}
+document.getElementById("correct").innerHTML=correct;
+document.getElementById("x").innerHTML=count-win;
+ }
+ else
+ if(document.getElementById("myRadio3").checked)
+ {
+a1=document.getElementById("matrix11").value;
+a2=document.getElementById("matrix12").value;
+a3=document.getElementById("matrix13").value;
+a4=document.getElementById("matrix14").value;
+b1=document.getElementById("matrix21").value;
+b2=document.getElementById("matrix22").value;
+b3=document.getElementById("matrix23").value;
+b4=document.getElementById("matrix24").value;
+bdika=document.getElementById("sum").value;
+
+sum1=parseFloat(a1) - parseFloat(b1)
+sum2=parseFloat(a2) - parseFloat(b2)
+sum3=parseFloat(a3) - parseFloat(b3)
+sum4=parseFloat(a4) - parseFloat(b4)
+sumf=parseFloat(sum1)*parseFloat(sum4)-parseFloat(sum2)*parseFloat(sum3)
+document.getElementById("result1").innerHTML=sum1;
+document.getElementById("result2").innerHTML=sum2;
+document.getElementById("result3").innerHTML=sum3;
+document.getElementById("result4").innerHTML=sum4;
+document.getElementById("resultf").innerHTML=sumf;
+count=sumf
+correct=0
+if(bdika==count)
+{
+document.getElementById('myImage').src="correct.png";
+}
+else
+{
+document.getElementById('myImage').src="x.png";
+}
+document.getElementById("correct").innerHTML=correct;
+document.getElementById("x").innerHTML=count-win;
+}
+}
+</script>
+
+<body dir="rtl">
+<center>
+<c>מטריצות 2*2</c>
+</center>
+<h1>הוראות המשחק:</h1>
+<br>
+<b>
+א:הכנס נתונים למטריצה 1 ולמטריצה 2\לחץ על כפתור מספרים אקראיים.
+<br>
+ב:בחר באיזה פעולה תרצה להשתמש:כפל,חיבור,חיסור.
+<br>
+ג:הכנס את התוצאה שלך לאחר שחישבת את המטריצה.
+<br>
+ד:לחץ על כפתור חשב להצגת הפתרון.
+<br>
+ה:בדוק את תשובתך.
+<br>
+בהצלחה
+</b>
+<center>
+<a>1:הכנס נתונים</a>
+<br>
+<button onclick="random()">מספרים אקראיים</button>
+<br>
+<b>
+מטריצה 1: 
+</b>
+<br><br>
+<input type="text" id="matrix11" name="matrix11" size="1" value=0>
+<input type="text" id="matrix12" name="matrix12" size="1" value=0>
+<br>
+<input type="text" id="matrix13" name="matrix13" size="1" value=0>
+<input type="text" id="matrix14" name="matrix14" size="1" value=0>
+<br><br> 
+<br><br>
+<b>
+מטריצה 2:
+</b>
+<br><br>
+<input type="text" id="matrix21" name="matrix21" size="1" value=0>
+<input type="text" id="matrix22" name="matrix22" size="1" value=0>
+<br>
+<input type="text" id="matrix23" name="matrix23" size="1" value=0>
+<input type="text" id="matrix24" name="matrix24" size="1" value=0>
+<br>
+<a>2:בחר פעולה</a>
+<br>
+<a>
+ <input type="radio" name="dugma" value="0" id="myRadio1" checked> *(כפל)
+  <br>
+  <input type="radio" name="dugma" value="0" id="myRadio2"> +(חיבור)
+  <br>
+  <input type="radio" name="dugma" value="0" id="myRadio3"> -(חיסור)
+  </a>
+  <br><br>
+  <a>3:הכנס את התוצאה שלך כאן</a>
+<input type="text" id="sum" name="sum" size="1" value=0>
+<br><br>
+  <a>4:</a>
+  <button onclick="kafal()">חשב</button>
+  <br><br>
+  <b>
+תוצאה במטריצה:
+<br>
+<span id="result1"></span>
+<span id="result2"></span>
+<br>
+<span id="result3"></span>
+<span id="result4"></span>
+<br>
+תוצאה:
+<br>
+<span id="resultf"></span>
+</b>
+<br><br>
+ <a>5:</a>
+<a>האם צדקת?</a>
+<img id="myImage" src="" style="width:200px">
+</center>   
+</body>
+</html>
